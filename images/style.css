@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+.section-focus-pic{margin:0 auto 0 auto;height:342px;width:515px;overflow:hidden;position:relative;}
+.section-focus-pic ul li{position:absolute;top:0;left:570px;width:515px;height:342px;}
+.section-focus-pic ul li h3{position:absolute;bottom:11px;left:0;width: 400px;font-weight:normal;color:#FFF;margin-left: 20px;z-index: 111;font-size: 18px; font-family:"微软雅黑";line-height:0px;}
+.section-focus-pic ul li div{position:absolute;bottom:0;left:0;height:50px;background-color:#000;width:515px;opacity: 0.6;filter: alpha(opacity=60);}
+.pages{width:515px;height:342px;}
+.section-focus-pic .controler{position:absolute;bottom:20px;right:20px;}
+.section-focus-pic .controler b{cursor:pointer;width:10px;height:10px;display:block;overflow:hidden;text-indent:20px;float:left;margin:0 0 0 10px;border-radius:50%;background:#FFFFFF;}
+.section-focus-pic .controler b.down{border-radius:50%;background:#48a91b;}
+.section-focus-pic .controler2 a{display:block; width:40px;position:absolute;top:120px;height:40px;}
+.section-focus-pic .controler2 a i{cursor:pointer;display:block;width:22px;height:34px; background:url(images/star.png) no-repeat;}
+.section-focus-pic .controler2 .prev{left:5px;}
+.section-focus-pic .controler2 .prev i{background-position:-34px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/star_05.png');margin-left:5px;}
+.section-focus-pic .controler2 .prev:hover i{left:10px;background-position:-34px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/star_03.png');}
+.section-focus-pic .controler2 .next{right:10px;}
+.section-focus-pic .controler2 .next i{background-position:-62px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/star_06.png');margin-left:10px;}
+.section-focus-pic .controler2 .next:hover i{right:10px;background-position:-62px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/star_04.png');}
