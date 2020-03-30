@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue学习</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*
+			如何理解数据响应式
+				html5中的响应式（屏幕尺寸的变化导致样式的变化）
+				数据得响应式（数据的变化导致页面内容的变化）
+			什么是数据绑定
+				数据绑定：将数据填充到标签中
+			v-once
+				显示内容后不在具有响应式功能,如果信息后面不在需要继续修改可以使用，优点是提高性能
+		 */
+		
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div v-text="msg"></div>
+		<div v-once>{{info}}</div>
+		
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",//用于说明填充到哪里，元素的挂载位置
+		data:{    //数据模型，值是一个对象
+			msg:"hello Vue",
+			info:"明天会更好"
+
+		}
+	})
+	</script>
+</body>
+</html>

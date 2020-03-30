@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue学习</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<!-- class样式处理 
+		
+	-->
+	<style>
+
+	</style>
+</head>
+<body>
+	<div id="app">
+		<div v-bind:style="{border:borderStyle,width:widthStyle,height:heightStyle}"></div>
+		<div v-bind:style="vhStyles"></div>
+		<div v-bind:style="[vhStyles,errStyles]"></div>
+		<button @click="zh">切换</button>
+	</div>
+	
+	<script type="text/javascript">
+
+	var vm=new Vue({
+		el:"#app",//用于说明填充到哪里，元素的挂载位置
+		data:{    //数据模型，值是一个对象
+			borderStyle:"1px solid blue",
+			widthStyle:"100px",
+			heightStyle:"100px",
+			vhStyles:{
+				border:"1px solid red",
+				width:"200px",
+				height:"100px",
+				margin:"20px 0px 20px 0px"
+			},
+			errStyles:{
+				border:"3px solid #cfcfcf",
+				background:"red"
+			}
+		},
+		methods:{
+			zh:function(){
+				this.borderStyle ="2px solid green";
+				if(this.vhStyles.height == "100px"){
+					this.vhStyles.height = "200px"
+				}
+				else{
+					this.vhStyles.height = "100px"
+				}
+				
+			}
+		}
+	});
+	</script>
+</body>
+</html>

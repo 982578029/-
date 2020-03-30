@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue计算器实例</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		
+		/*[v-clock]{display: none;}*/
+	</style>
+</head>
+<body>
+<!-- 	<div id="div1" style="width:205px;height:200px;border:1px solid #333;margin:100px auto;padding:0px 20px;">
+		<h1 style="line-height:30px;height:30px;text-align:center;">简单计算器</h1>
+		<div>
+			数值A:<input type="text" name="" v-model="a">
+		</div>
+		<div>
+			数值B:<input type="text" name="" v-model="b">
+		</div>
+		<button  @click="result">计算</button>
+		<div>
+			计算结果：<p v-text="resy"></p>
+		</div>
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",
+		data:{   
+			a:"",
+			b:"",
+			resy:""
+		},
+		methods:{
+			result:function(){
+				this.resy=parseInt(this.a)+parseInt(this.b)
+			}
+		}
+	})
+	</script> -->
+	v-modelform表单使用
+	methods:Vue函数使用
+	<div id="lx">
+		<h1>计算器加</h1>
+		<div>
+			数据1:<input type="text" v-model="a">
+		</div>
+		<div>
+			数据2:<input type="text" v-model="b">
+		</div>
+		<button @click="jsz">加</button>
+		<button @click="jsz1">减</button>
+		<p v-text="zhi"></p>
+	</div>
+	<script type="text/javascript">
+		var zh=new Vue({
+			el:"#lx",
+			data:{
+				a:"",
+				b:"",
+				zhi:""
+			},
+			methods:{
+				jsz:function(){
+					this.zhi=parseInt(this.a)+parseInt(this.b)
+				},
+				jsz1:function(){
+					this.zhi=parseInt(this.a)-parseInt(this.b)
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

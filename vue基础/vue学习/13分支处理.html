@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+</head>
+<body>
+	<!-- 
+		v-show的原理：控制元素样式是否进行显示
+		v-if和v-show的区别：
+			v-if控制元素是否渲染到页面（页面直接不加载）
+			v-show控制元素是否显示（页面已加载）
+	 -->
+	<div id="app">
+		<div v-if="b>90">优秀</div>
+		<div v-else-if="b<90&&b>=80">良好</div>
+		<div v-else-if="b<80&&b>=70">一般</div>
+		<div v-else>比较差</div>
+		<div v-show="flag">测试 v-show</div>
+		<button @click="ef">点击显示</button>
+	</div>
+
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				b:80,
+				flag:false
+			},
+			methods:{
+				ef:function(){
+					
+						this.flag=!this.flag
+					
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>
