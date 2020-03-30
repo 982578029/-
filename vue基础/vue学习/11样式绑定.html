@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue学习</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<!-- class样式处理 
+		对象语法
+			<div v-bind:class="{class名:is+首字母大写的Class名}"></div>
+		数组语法
+			<div v-bind:class="[class名称+Class,class名称+Class]"></div>
+		相关细节：
+			1：对象绑定和数组绑定可以结合使用
+			2：class绑定的值可以简化操作，名称+classes
+			3：
+	-->
+	<style>
+	#app div{overflow: hidden;margin-bottom: 30px;}
+		.active,.zc{
+			float: left;
+			border:1px solid red;
+			width: 100px;
+			height: 100px;
+		}
+		.zc{margin-left: 140px;border-color: #333;}
+		.er{background: orange;}
+		.bc{background: red}
+		.txt{color: yellow;}
+	</style>
+</head>
+<body>
+	<div id="app">
+
+		<div>
+			<div class="active"></div>
+			<!-- 对象用法 -->
+			<!-- <div v-bind:class="{zc:isZc,er:isEr}">对象</div> -->
+			<!-- 数组用法 -->
+				<div v-bind:class="[zcClass,erClass,{txt: isTxt}]">数组</div>
+			<!-- 简化操作 -->
+			<div v-bind:class="jhClasses">文字</div>
+			<div v-bind:class="objClasses">文字2</div>
+		</div>
+		<button v-on:click="zcc">切换</button>
+	</div>
+	
+	<script type="text/javascript">
+
+	var vm=new Vue({
+		el:"#app",//用于说明填充到哪里，元素的挂载位置
+		data:{    //数据模型，值是一个对象
+			// isZc:true,	// 对象用法
+			// isEr:true	// 对象用法
+			zcClass:"zc",
+			erClass:"er",
+			bcClass:"bc",
+			isTxt:true,
+			jhClasses:["zc","er","txt"],
+			objClasses:{
+				zc:true,
+				er:true
+			}
+		},
+		methods:{
+			zcc:function(){
+				//控制isActive的值在true和flase之间进行切换
+				//对象 
+				//this.isZc = !this.isZc,
+				//this.isEr = !this.isEr
+				//数组
+				this.isTxt = false;
+				this.erClass=this.bcClass;
+				this.objClasses.zc = false
+				
+			}
+		}
+	});
+	</script>
+</body>
+</html>

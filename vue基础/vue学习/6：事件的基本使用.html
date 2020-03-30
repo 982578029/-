@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>事件的基本使用</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*
+			1：如果事件直接绑定参数名称，那么默认会传递事件对象作为事件函数的第一个参数
+			2: 如果绑定函数调用，那么事件绑定函数必须作为最后一个参数使用，并且有固定格式，$event
+			函数调用方式
+				v-on:click=@click
+				直接绑定函数名
+					<button v-on:click="msg"></button>
+				调用函数
+					<button @click="msg()"></button>
+			事件函数参数传递
+				<button @click="msg(123,$event)"></button>
+		 */
+		
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div>{{num}}</div>
+		<div>
+			<button @click="jiajia(123,321,$event)">加</button>
+			<button @click="jianjian($event)">减</button>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",
+		data:{    
+			num:"0"
+		},
+		methods:{
+			jiajia:function(p,p1,event){
+				console.log(p,p1);
+				console.log(event.target.innerHTML);
+				this.num++;
+			},
+			jianjian:function(event){
+				console.log(event.target.innerHTML);
+				this.num--;
+			}
+			
+		}
+
+	});
+	</script>
+</body>
+</html>

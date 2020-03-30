@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>属性绑定</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*v-bind:href可以简写成:href*/
+	</style>
+</head>
+<body>
+	<div id="ap">
+		<a v-bind:href="url" alt="百度" target="_blank">百度</a>
+		<button v-on:click="kk">切换</button>
+	</div>
+	<script type="text/javascript">
+		var m=new Vue({
+			el:"#ap",
+			data:{
+				url:"http://www.baidu.com"
+			},
+			methods:{
+				kk:function(){
+					if(this.url=="http://www.baidu.com"){
+						this.url="https://cn.vuejs.org"
+					}
+					else{
+						this.url="http://www.baidu.com"
+					}
+					
+				}
+			}
+
+		})
+	</script>
+</body>
+</html>

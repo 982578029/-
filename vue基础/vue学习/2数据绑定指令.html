@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue学习</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*
+			v-text填充文本
+				相对于插值表达式更加的简洁(推荐使用)
+			v-html 填充html片段
+				存在安全问题
+				本网站内部数据可用，来自第三方的数据不可用
+			v-pre 填充原始信息
+				显示原始信息，跳过编译过程（）
+
+		 */
+		
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div v-text="msg"></div>
+		<div v-html="msg1"></div>
+		<div v-pre="msg2">{{msg2}}</div>
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",//用于说明填充到哪里，元素的挂载位置
+		data:{    //数据模型，值是一个对象
+			msg:"hello Vue",
+			msg1:"<b>明天会更好</b>",
+
+		}
+	})
+	</script>
+</body>
+</html>

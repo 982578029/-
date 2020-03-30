@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>按键修饰符</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*
+			v-model限制在form表单中使用
+			v-on:keyup.+'按键'，
+			自定义修饰符：
+				自定义修饰符的名字是可以自定义的，但是对应的值必须是event.keyCode值
+
+		 */
+		
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<form>
+			<div>
+				账号：<input type="text" name="" v-on:keyup.delete="del" v-model="uname" >
+			</div>
+			<div>
+				密码：<input type="text" name="" v-on:keyup.enter="handleSubmit" v-model="pwd">
+			</div>
+			<input type="button" value="提交" v-on:click="handleSubmit">
+		</form>
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",
+		data:{  
+			uname:"",
+			pwd:""
+		},
+		methods:{
+			del:function(){
+				this.uname="";	
+			},
+			handleSubmit:function(){
+				console.log(this.uname,this.pwd);
+			}
+		}
+	})
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>vue学习</title>
+	<script type="text/javascript" src="images/vue.min.js"></script>
+	<style>
+		/*
+			v-model双向绑定，主要是用在表单输入域中
+			mvvm
+			m:model模型数据;
+			v:view视图demo;
+			vm:view-model实现控制逻辑;
+		 */
+		
+	</style>
+</head>
+<body>
+	<div id="div1">
+		<div v-text="msg"></div>
+		<div>
+			<input type="text" name="" v-model="msg">
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+	
+	var vm=new Vue({
+		el:"#div1",//用于说明填充到哪里，元素的挂载位置
+		data:{    //数据模型，值是一个对象
+			msg:"hello Vue",
+			info:"明天会更好"
+
+		}
+	});
+	</script>
+</body>
+</html>
